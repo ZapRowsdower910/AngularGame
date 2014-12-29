@@ -1,0 +1,90 @@
+<!doctype html>
+<html ng-app="Store">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Test</title>
+    <link rel="stylesheet" href="includes/css/bootstrap.min.css">
+    <link rel="stylesheet" href="includes/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="includes/css/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.7/angular.js"></script>
+
+    <script src="includes/js/sugar.js"></script>
+
+    <script src="includes/app/App.js"></script>
+    <script src="includes/app/MainCtrl.js"></script>
+    <script src="includes/app/MainService.js"></script>
+
+    <script src="includes/app/items/ItemDirective.js"></script>
+  </head>
+  <body>
+    <div class="container">
+     <div ng-controller="MainCtrl">
+
+      <div class="action-area row">
+        <div class="merchant window col-md-5">
+          <div class="items pane">
+            <item inventory="merchant.inventory"></item>
+
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="controls pane">
+            <button type="button" class="btn btn-default">Buy</button>
+            <button type="button" class="btn btn-default">Close</button>
+          </div>
+        </div>
+
+        <div class="inventory window col-md-5 col-md-offset-1">
+         <div class="items pane">
+            <item inventory="player.inventory"></item>
+
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="controls pane">
+            <button type="button" class="btn btn-default">Sell</button>
+            <button type="button" class="btn btn-default">Close</button>
+          </div>
+        </div>
+
+      </div> <!-- // .action-area -->
+
+      <div class="row">
+        <div class="window col-md-11">
+          <div class="info pane row">
+            <div class="preview col-md-2"></div>
+            <div class="info-cnt col-md-9">
+              <h3 class="title">{{info.current.name}}</h3>
+              <p class="desc">{{info.current.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <!-- <div>
+        <h2>{{currentStory.title}}</h2>
+        <h4>{{currentStory.description}}</h4>
+        <select ng-options="s.name for s in statuses"
+                ng-model = "currentStory"
+                ng-change="otherStuffChange(otherStuff)"></select>
+      </div>
+
+       <div >
+          <ul class="list-unstyled" 
+              ng-repeat="s in stories"
+              ng-click="setCurrentStory(s)">
+            <li >{{s.title}}</li>
+          </ul>
+          <button class="btn" ng-click="createStory()">Add</button>
+       </div> -->
+
+      </div>
+    </div>
+  </body>
+</html>
