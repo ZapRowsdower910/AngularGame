@@ -30,6 +30,25 @@ angular.module('Store')
       });
     };
 
+    // TODO merge buy and sell methods
+    $scope.buyItem = function(){
+      var itemId = $scope.info.current.id,
+          activeItem;
+
+      $scope.merchant.inventory.remove($scope.info.current);
+      $scope.player.inventory.push($scope.info.current);
+
+    }
+
+    $scope.sellItem = function(){
+      var itemId = $scope.info.current.id,
+          activeItem;
+          
+      $scope.player.inventory.remove($scope.info.current);
+      $scope.merchant.inventory.push($scope.info.current);
+
+    }
+
     MainService.loadItemsConfig().then(function(d){
       console.log("formatted data:", d);
       $scope.items = d.items;

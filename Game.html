@@ -1,0 +1,36 @@
+<div class="action-area row">
+  <div class="merchant window col-md-5">
+    <div items 
+        inventory="merchant.inventory"
+        current="info.current"></div>
+
+    <div class="controls pane">
+      <button type="button" 
+              class="btn btn-default"
+              ng-click="buyItem()">Buy</button>
+
+      <button type="button" class="btn btn-default">Close</button>
+    </div>
+  </div>
+
+  <div class="inventory window col-md-5 col-md-offset-1">
+    <div items 
+          inventory="player.inventory"
+          current="info.current"></div>
+
+    <div class="controls pane">
+      <button type="button" 
+              class="btn btn-default"
+              ng-click="sellItem()">Sell</button>
+
+      <button type="button" class="btn btn-default">Close</button>
+    </div>
+  </div>
+
+</div> <!-- // .action-area -->
+
+<div class="row">
+  <div storyboard current="info.current"></div>
+</div>
+
+<div class="clearfix"></div>

@@ -1,44 +1,30 @@
 angular.module("Store")
-  .directive("item", function(){
+  .directive("items", function(){
     var controller = function($scope){
 
-      $scope.active = undefined;
-
-      $scope.selectItem = function(item){
-        console.log("directive selected!", item);
-        $scope.active = item;
-      }
+      $scope.activeIndex
 
     };
 
     var linker = function(scope, el, attrs){
-      console.log(el)
-      el.on('click', function(e){
+      scope.selectItem = function(e,itemObj, index){
         e.preventDefault();
 
-        console.log(this)
-        if(el.hasClass('active')){
-          console.log("removing active")
-          el.css({
-              border:"1px solid black"
-            })
-            .removeClass("active");
-        } else {
-          console.log("adding active")
-          el.css({
-              border:"1px solid yellow"
-            })
-            .addClass("active");  
-          
-        }
-        
-      });
+        console.log(scope)
+
+        // Display currently active itemObj
+        scope.current = itemObj;
+        // Set index to activate the active class to show the click
+        // was successful
+        scope.activeIndex = index;
+     } 
     }
 
     return {
       restrict : "AE",
       scope : {
-        "inventory" : "="
+        "inventory" : "=",
+        "current" : "="
       },
       link : linker,
       controller : controller,

@@ -1,6 +1,12 @@
-<div class="item col-md-2" 
-    ng-repeat="i in inventory"
+
+  <div class="items pane">
     
-    >
-      {{i.name}}
+    <div item class="item col-md-2" 
+      ng-repeat="i in inventory track by i.id"
+      ng-click="selectItem($event,i,$index)"
+      ng-class="{active: $index == activeIndex}"
+      >
+        {{i.name}}
+    </div>
+    <div class="clearfix"></div>
   </div>

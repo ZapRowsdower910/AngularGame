@@ -10,79 +10,42 @@
 
     <link rel="stylesheet" href="includes/css/main.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.7/angular.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.7/angular.js"></script>-->
+    <script src="includes/js/angular.1.3.8.min.js"></script>
+    <script src="includes/js/angular.1.3.8.animate.min.js"></script>
+    <script src="includes/js/angular.1.3.8.route.min.js"></script>
 
     <script src="includes/js/sugar.js"></script>
 
     <script src="includes/app/App.js"></script>
+    <script src="includes/app/NavCtrl.js"></script>
     <script src="includes/app/MainCtrl.js"></script>
+    <script src="includes/app/AdminCtrl.js"></script>
     <script src="includes/app/MainService.js"></script>
 
+    <script src="includes/app/storyboard/StoryBoard.js"></script>
     <script src="includes/app/items/ItemDirective.js"></script>
+
   </head>
   <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavCtrl">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#/">AngularGame</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ng-class="{active : isActive('/')}"><a ng-href="#/">Game</a></li>
+            <li ng-class="{active : isActive('/admin')}"><a ng-href="#/admin">Admin</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
     <div class="container">
      <div ng-controller="MainCtrl">
 
-      <div class="action-area row">
-        <div class="merchant window col-md-5">
-          <div class="items pane">
-            <item inventory="merchant.inventory"></item>
-
-            <div class="clearfix"></div>
-          </div>
-
-          <div class="controls pane">
-            <button type="button" class="btn btn-default">Buy</button>
-            <button type="button" class="btn btn-default">Close</button>
-          </div>
-        </div>
-
-        <div class="inventory window col-md-5 col-md-offset-1">
-         <div class="items pane">
-            <item inventory="player.inventory"></item>
-
-            <div class="clearfix"></div>
-          </div>
-
-          <div class="controls pane">
-            <button type="button" class="btn btn-default">Sell</button>
-            <button type="button" class="btn btn-default">Close</button>
-          </div>
-        </div>
-
-      </div> <!-- // .action-area -->
-
-      <div class="row">
-        <div class="window col-md-11">
-          <div class="info pane row">
-            <div class="preview col-md-2"></div>
-            <div class="info-cnt col-md-9">
-              <h3 class="title">{{info.current.name}}</h3>
-              <p class="desc">{{info.current.description}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="clearfix"></div>
-
-      <!-- <div>
-        <h2>{{currentStory.title}}</h2>
-        <h4>{{currentStory.description}}</h4>
-        <select ng-options="s.name for s in statuses"
-                ng-model = "currentStory"
-                ng-change="otherStuffChange(otherStuff)"></select>
-      </div>
-
-       <div >
-          <ul class="list-unstyled" 
-              ng-repeat="s in stories"
-              ng-click="setCurrentStory(s)">
-            <li >{{s.title}}</li>
-          </ul>
-          <button class="btn" ng-click="createStory()">Add</button>
-       </div> -->
+      <div class="view" ng-view=""></div>
 
       </div>
     </div>

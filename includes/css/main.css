@@ -1,5 +1,8 @@
+.view {
+  margin-top:70px;
+}
 .action-area{
-  margin-bottom:1em;
+  margin:1em;
 }
 
 .window{
@@ -26,6 +29,9 @@
   height:50px;
   margin:.5em;
   padding:.5em;
+}
+.window .items .item.active{
+  border:1px solid lime;
 }
 
 .window .controls{
