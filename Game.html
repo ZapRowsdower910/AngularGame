@@ -7,7 +7,7 @@
     <div class="controls pane">
       <button type="button" 
               class="btn btn-default"
-              ng-click="buyItem()">Buy</button>
+              ng-click="exchangeItem(merchant.inventory, player.inventory)">Buy</button>
 
       <button type="button" class="btn btn-default">Close</button>
     </div>
@@ -21,7 +21,7 @@
     <div class="controls pane">
       <button type="button" 
               class="btn btn-default"
-              ng-click="sellItem()">Sell</button>
+              ng-click="exchangeItem(player.inventory, merchant.inventory)">Sell</button>
 
       <button type="button" class="btn btn-default">Close</button>
     </div>

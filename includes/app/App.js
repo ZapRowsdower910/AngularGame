@@ -3,7 +3,7 @@ angular.module('Store', ['ngRoute'])
     $routeProvider
       .when("/", {
         templateUrl:"Game.html",
-        controller : "MainCtrl"
+        controller : "GameCtrl"
       })
       .when("/admin", {
         templateUrl : "Admin.html",

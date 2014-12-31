@@ -20,14 +20,16 @@
     <script src="includes/app/App.js"></script>
     <script src="includes/app/NavCtrl.js"></script>
     <script src="includes/app/MainCtrl.js"></script>
-    <script src="includes/app/AdminCtrl.js"></script>
-    <script src="includes/app/MainService.js"></script>
+    <script src="includes/app/views/game/GameCtrl.js"></script>
+    <script src="includes/app/views/admin/AdminCtrl.js"></script>
+    <script src="includes/app/views/game/GameService.js"></script>
 
-    <script src="includes/app/storyboard/StoryBoard.js"></script>
-    <script src="includes/app/items/ItemDirective.js"></script>
+    <script src="includes/app/directives/storyboard/StoryBoard.js"></script>
+    <script src="includes/app/directives/items/ItemDirective.js"></script>
+    <script src="includes/app/directives/notifications/NotificationDirective.js"></script>
 
   </head>
-  <body>
+  <body ng-controller="MainCtrl">
     <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavCtrl">
       <div class="container">
         <div class="navbar-header">
@@ -42,12 +44,19 @@
       </div>
     </nav>
 
+    <div class="container notify">
+      <div class="row">
+          <div notifications
+            type="notify.type"
+            msg="notify.msg"
+          ></div>
+      </div>
+    </div>
+
     <div class="container">
-     <div ng-controller="MainCtrl">
 
       <div class="view" ng-view=""></div>
 
-      </div>
     </div>
   </body>
 </html>
