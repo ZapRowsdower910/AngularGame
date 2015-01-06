@@ -1,7 +1,8 @@
 
   <div class="items pane">
-    
     <div item class="item col-md-2" 
+      ng-mouseEnter="itemPreviewShow($event, i)"
+      ng-mouseLeave="itemPreviewHide($event, i)"
       ng-repeat="i in inventory track by i.id"
       ng-click="selectItem($event,i,$index)"
       ng-class="{active: i.id == current.id}"

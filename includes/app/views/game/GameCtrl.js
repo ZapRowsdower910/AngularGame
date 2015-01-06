@@ -14,6 +14,11 @@ angular.module('Store')
       current : undefined
     };
 
+    $scope.activePreview = {
+      name : "",
+      description: ""
+    };
+
 
     // TODO merge buy and sell methods
     $scope.exchangeItem = function(from, to){

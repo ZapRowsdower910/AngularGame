@@ -9,8 +9,8 @@ angular.module("Store")
       },
       controller : function($scope){
         $scope.current = {
-          name : "default n",
-          description: "default d"
+          name : "",
+          description: ""
         }
       },
       link : function(scope, el, attr){

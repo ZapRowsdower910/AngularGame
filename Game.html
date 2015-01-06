@@ -2,7 +2,8 @@
   <div class="merchant window col-md-5">
     <div items 
         inventory="merchant.inventory"
-        current="info.current"></div>
+        current="info.current"
+        preview="itemPreview"></div>
 
     <div class="controls pane">
       <button type="button" 
@@ -16,7 +17,8 @@
   <div class="inventory window col-md-5 col-md-offset-1">
     <div items 
           inventory="player.inventory"
-          current="info.current"></div>
+          current="info.current"
+          preview="itemPreview"></div>
 
     <div class="controls pane">
       <button type="button" 
@@ -32,5 +34,7 @@
 <div class="row">
   <div storyboard current="info.current"></div>
 </div>
+
+<div itempreview item="itemPreview" class="item-preview"></div>
 
 <div class="clearfix"></div>
