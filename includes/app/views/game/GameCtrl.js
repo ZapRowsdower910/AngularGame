@@ -14,7 +14,7 @@ angular.module('Store')
       current : undefined
     };
 
-    $scope.activePreview = {
+    $scope.itemPreview = {
       name : "",
       description: ""
     };

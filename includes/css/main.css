@@ -81,3 +81,7 @@
 .item-preview-cnt.ng-enter.ng-enter-active {
   opacity:1;
 }
+
+.sidebar{
+  background-color:#f1f1f1;
+}

@@ -13,12 +13,19 @@ angular.module("Store")
         $scope.msg="game loaded";
       },
       link : function(scope, el, attrs){
-        if(scope.type != "none"){
-          $timeout(function(){
-            scope.type = 'none';
-            scope.msg = '';
-          }, 5000);
-        }
+        scope.$watch(
+          function(){return scope.msg;}, 
+          function(newVal, oldVal){
+
+            if(newVal){
+              $timeout(function(){
+                scope.type = 'none';
+                scope.msg = '';
+              }, 5000);
+            }
+
+        });
+
       }
     }
 

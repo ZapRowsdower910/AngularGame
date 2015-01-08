@@ -1,4 +1,4 @@
-angular.module("Store")
+angular.module("Store.Admin")
   .controller("AdminCtrl", function($scope){
   
   });

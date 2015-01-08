@@ -1,4 +1,4 @@
-angular.module('Store', ['ngRoute', 'ngAnimate'])
+angular.module('Store', ['ngRoute', 'ngAnimate', 'Store.Admin'])
   .config(function($routeProvider){
     $routeProvider
       .when("/", {
